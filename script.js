@@ -44,9 +44,39 @@ const weatherReport = async (location) => {
 
     const icon = responseJson.current.condition.icon;
     const text = responseJson.current.condition.text;
-    const temp = responseJson.current.condition.temp_c;
+    const temp = responseJson.current.temp_c;
 
-    const weatherDiv = document.querySelector('.weather');
+    const weatherDiv = document.querySelector(".weather");
+
+    const locationElement = document.createElement("div");
+    locationElement.classList.add("location-name");
+    locationElement.innerHTML = `<div class="location-name">${locationName}</div>`;
+    weatherDiv.appendChild(locationElement);
+
+    const regionElement = document.createElement("div");
+    regionElement.classList.add("region-name");
+    regionElement.innerHTML = `<div class="region-name">${regionName}</div>`;
+    weatherDiv.appendChild(regionElement);
+
+    const countryElement = document.createElement("div");
+    countryElement.classList.add("country-name");
+    countryElement.innerHTML = `<div class="country-name">${countryName}</div>`;
+    weatherDiv.appendChild(countryElement);
+
+    const iconElement = document.createElement("div");
+    iconElement.classList.add("icon-div");
+    iconElement.innerHTML = `<img src="https:${icon}" alt="" class="icon">`;
+    weatherDiv.appendChild(iconElement);
+
+    const textElement = document.createElement("div");
+    textElement.classList.add("text");
+    textElement.innerHTML = `<div class="country-name">${text}</div>`;
+    weatherDiv.appendChild(textElement);
+
+    const tempElement = document.createElement("div");
+    tempElement.classList.add("temp");
+    tempElement.innerHTML = `<div class="country-name">${temp}</div>`;
+    weatherDiv.appendChild(tempElement);
 };
 
 weatherReport("mumbai");
