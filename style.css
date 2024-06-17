@@ -1,4 +1,30 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: bold;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.inside-container {
+    /* background-color: lightblue;
+    color: black; */
+    background-color: rgb(44, 44, 44);
+    color: wheat;
+    width: 360px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hide {
+    display: none;
 }
